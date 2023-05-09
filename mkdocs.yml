@@ -3,6 +3,49 @@ theme:
   name: material
   features:
     - content.action.edit
+    - content.code.copy
+    - navigation.indexes
+    # - navigation.expand
+    - navigation.footer
+    # - navigation.sections
+    - navigation.top
 repo_url: https://github.com/hackforla/website-wiki
 repo_name: hackforla/website-wiki
 edit_uri: edit/main/docs/
+
+# Plugins
+plugins:
+  - search
+  - awesome-pages:
+      filename: .pages
+      collapse_single_pages: true
+      strict: false
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - md_in_html
+  - toc:
+      title: On this page
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
