@@ -1,12 +1,18 @@
-This is a record in the [Decision Records on Solutions Adopted](Decision-Records-on-Solutions-Adopted).
+---
+status: ✅ Adopted
+---
 
-#### Issue 
-[#2485 Update the Program Areas page so the projects are dynamically rendered](https://github.com/hackforla/website/issues/2485) - [comment](https://github.com/hackforla/website/issues/2485#issuecomment-1261579356) regarding the addition of project page links to mini cards. 
+
+#### Issue
+
+[Comment](https://github.com/hackforla/website/issues/2485#issuecomment-1261579356) on [#2485](https://github.com/hackforla/website/issues/2485)
 
 #### Problem Statement
-Per comment, it was proposed that a list of "good second issues" be made to add the hyperlinks to each of the projects in the .md files. Before this issue's linked pull request, the project names on the mini cards led to their hackforla.org/projects/.. page. After the pull request was merged, the project names led to their respective hackforla github pages. 
+
+Per comment, it was proposed that a list of "good second issues" be made to add the hyperlinks to each of the projects in the .md files. Before this issue's linked pull request, the project names on the mini cards led to their hackforla.org/projects/.. page. After the pull request was merged, the project names led to their respective hackforla github pages.
 
 #### Adopted Solution
+
 It was determined there was a more optimized solution. This issue was fixed by the method implemented in issue [#3592 Link projects in program areas page to project page](https://github.com/hackforla/website/issues/3592) and its linked [pull request](https://github.com/hackforla/website/pull/3692). This method involves the following:
 
 ```
@@ -15,6 +21,7 @@ It was determined there was a more optimized solution. This issue was fixed by t
 ```
 
 as followed by the [code](https://github.com/hackforla/website/pull/3692/files):
+
 ```
 42 {% for project in site.projects %}
 43     {% for project_program in project.program-area %}
