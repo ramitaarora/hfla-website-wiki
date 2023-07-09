@@ -1,93 +1,168 @@
-# Documentation
 
-This documentation is generated with the [MkDocs](https://www.mkdocs.org/) static site generator with the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) design theme. See the respective documentation for detailed information of installation and configuration options.
+# HackforLA.org Wiki
 
-## Initial Installation  
+This repository contains documentation for the Hack for LA website team. The site is live at [https://hackforla.github.io/website-wiki/](https://hackforla.github.io/website-wiki/) and is generated using [MkDocs](https://www.mkdocs.org/) with the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme.
 
-The initial installation of MkDocs included the following files: 
+## Prerequisites
+
+- Ensure you have Python3 installed on your machine.
+- Windows users: If you are installing Python for the first time, remember to check the box to add Python to PATH during installation.
+
+## Installation and Setup
+
+1. Fork the [hackforla/website-wiki repository](https://github.com/hackforla/website-wiki) on GitHub and/or clone to your local machine:
+
+```bash
+git clone https://github.com/<Your-Username>/website-wiki.git
 ```
-    mkdocs.yml	                        # MkDocs configuration file
-    docs/
-        index.md                        # folder containing documentation source .md files
-    .github/
-        workflow/
-            ci.yml                      # min. installation of Material theme
-        ISSUE_TEMPLATE/                 # sample template .md files
-    workflow-templates/                 # test files
-    LICENSE
-    README.md                        
+
+2. Move into the cloned directory:
+
+```bash
+cd website-wiki
 ```
-Site is live at [https://hackforla.github.io/website-wiki/](https://hackforla.github.io/website-wiki/)
 
-## Deploying Documents
-[Documents are deployed](https://www.mkdocs.org/user-guide/deploying-your-docs/) in the appropriate subfolder under the `/docs/` folder. The documents are deployed whenever the `ci.yml` action is run.
+3. Choose from one of the following options:
 
-# Configuration Options  
-Following are descriptions of some of the many configuration options. 
-## MkDocs Plugins  
-Plugins available for use with MkDocs are too numerous to describe here, but includes this list of [MkDocs Plugins](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins). This is also available as a [Best of MkDocs](https://github.com/pawamoy/best-of-mkdocs) list of 180 open-source project plugins ranked by users.  
+### Option 1: Python with Conda
 
-## Material Options  
-The Material for MkDocs design theme includes multiple configuration and extension options. Unless noted otherwise, all configurations and extensions are set in the `mkdocs.yml` configuration file.  
-- Note: Material for MkDocs recommends installation of its [YAML schema validation](https://squidfunk.github.io/mkdocs-material/creating-your-site/#:~:text=Recommended%3A%20configuration%20validation%20and%20auto%2Dcomplete).   
+<details>
+<summary><strong>Installation and Setup Instructions</strong></summary>
 
-- Note: MkDocs includes a [live preview server](https://squidfunk.github.io/mkdocs-material/creating-your-site/) in Docker for previewing changes as they are made.  
-  
+- Install Conda:
+  - macOS: Use [Homebrew](https://brew.sh/) to install Miniconda:
+    ```bash
+    brew install --cask miniconda
+    ```
+
+  - Windows/Linux: Download and install Miniconda from the official website: [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
+
+- Create and Activate a Conda Environment:
+  1. Create a new Conda environment:
+    ```bash
+    conda create --name mkdocs python=3  # You can replace 'mkdocs' with your preferred environment name, and specify python=3.X for a specific Python version.
+    ```
+  2. Activate the environment:
+    ```bash
+    conda activate mkdocs
+    ```
+  3. Install the necessary packages:
+    ```bash
+    pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin
+    ```
+  4. Deactivate the environment when done:
+    ```bash
+    conda deactivate
+    ```
+</details>
+
+### Option 2: Python with venv
+
+<details>
+<summary><strong>Installation and Setup Instructions</strong></summary>
+
+- Set up a new Python virtual environment:
+  ```bash
+  python -m venv venv  # 'venv' can be replaced with your custom environment name
+  ```
+
+- Activate the environment:
+  - macOS/Linux:
+    ```bash
+    source venv/bin/activate
+    ```
+  - Windows:
+    ```bash
+    .\website-wiki-venv\Scripts\activate
+    ```
+
+- Install the required packages using pip:
+  ```bash
+  pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin
+  ```
+</details>
+
+## Previewing the Site
+
+To start the local server:
+
+```bash
+mkdocs serve
+```
+
+Open a web browser and navigate to **`http://127.0.0.1:8000`**
 
 
-### Material design customizations
+## Additional Notes on Config
 
-- [Additional CSS](https://squidfunk.github.io/mkdocs-material/customization/#additional-css) - using a separate style sheet to adjust specific elements  
-- [Additional JS](https://squidfunk.github.io/mkdocs-material/customization/#additional-javascript) - integrating other syntax or adding custom logic to the theme
-- [Theme extension](https://squidfunk.github.io/mkdocs-material/customization/#extending-the-theme) - an easy way to override parts of Material for MkDocs without forking from git
+- The `mkdocs-material` package serves as the base theme, which includes several other packages. Any additional non-native plugins enabled in the `mkdocs.yml` file under the `plugins` entry may require specific installation instructions. See [Best of MkDocs](https://github.com/pawamoy/best-of-mkdocs) for a list of popular plugins.
+- If your updates involve custom hooks, such as Python scripts linked in the `mkdocs.yml` file in the `hooks/` folder, some changes may only be visible after running the `mkdocs build` command manually.
 
-### Material design advanced configuration options 
+For more details and customization options, refer to the official [mkdocs-material documentation](https://squidfunk.github.io/mkdocs-material/).
 
-- [Changing the colors](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#changing-the-colors)  
-- [Changing the fonts](https://squidfunk.github.io/mkdocs-material/setup/changing-the-fonts/#changing-the-fonts)  
-- [Changing the language](https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/#changing-the-language)  
-- [Changing the logo and icons](https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/#changing-the-logo-and-icons)  
-- [Ensuring data privacy](https://squidfunk.github.io/mkdocs-material/setup/ensuring-data-privacy/#ensuring-data-privacy)  
-- [Setting up navigation](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#setting-up-navigation)  
-- [Setting up site search](https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/#setting-up-site-search)  
-- [Setting up site analytics](https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/#setting-up-site-analytics)  
-- [Setting up social cards](https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/#setting-up-social-cards)  
-- [Setting up a blog](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#setting-up-a-blog)  
-- [Setting up tags](https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/#setting-up-tags)  
-- [Setting up versioning](https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/#setting-up-versioning)  
-- [Setting up the header](https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-header/#setting-up-the-header) 
-- [Setting up the footer](https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#setting-up-the-footer)  
-- [Adding a git repository](https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#adding-a-git-repository)  
-- [Adding a comment system](https://squidfunk.github.io/mkdocs-material/setup/adding-a-comment-system/#adding-a-comment-system)  
-- [Building an optimized site](https://squidfunk.github.io/mkdocs-material/setup/building-an-optimized-site/#building-an-optimized-site)  
-- [Building for offline usage](https://squidfunk.github.io/mkdocs-material/setup/building-for-offline-usage/#building-for-offline-usage)  
 
-### Python Markdown extension options   
-There are two recommended Markdown extension packages, [Python Markdown](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/) and [Python Markdown Extensions](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/), that are supported by Material for MkDocs. The minimal and recommended configurations for extensions are:   
-  
-- [Minimal configuration](https://squidfunk.github.io/mkdocs-material/setup/extensions/#minimal-configuration) when using Material for the first time
-- [Recommended configuration](https://squidfunk.github.io/mkdocs-material/setup/extensions/#recommended-configuration) that enables all Markdown-related features
+## Editing Markdown Files
 
-- Individual listings of Markdown-related config options from the two packages:
-  - [Abbreviations](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#abbreviations) – ability to add a small tooltip to an element  
-  - [Admonition](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#admonition) – support for call-outs (aka admonitions) 
-  - [Arithmatex](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#arithmatex) – allows rendering of math typesetting via [MathJax](https://www.mathjax.org/)  
-  - [Attribute Lists](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#attribute-lists) – allows adding HTML attributes and CSS classes  
-  - [BetterEm](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#betterem) – improves detection to emphasize text using special characters, i.e. for bold and italic
-  - [Caret, Mark & Tilde](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#caret-mark-tilde) – add the ability to highlight text and define sub- and superscripts  
-  - [Critic](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#critic) – allows usage of [Critic Markup](https://github.com/CriticMarkup/CriticMarkup-toolkit) to highlight text/ track changes  
-  - [Definition Lists](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#definition-lists) – allows usage of definition/ description lists `dl` in HTML  
-  - [Details](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#details) – ‘supercharges the Admonition extension’ for collapsible call-outs  
-  - [Emoji](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#emoji) – inlines bundled and custom emojis and icons 
-  - [Footnotes](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#footnotes) – allows defining inline footnotes  
-  - [Highlight](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#highlight) – support for syntax highlighting of code blocks 
-  - [InlineHighlight](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#inlinehilite) – built on top of Highlight for highlighting inline code blocks  
-  - [Keys](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#keys) – adds ability to render keyboard keys (e.g. Ctrl + Alt + Del)  
-  - [Markdown in HTML](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#markdown-in-html) – allows wrapping markdown content with custom elements in HTML  
-  - [SmartSymbols](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#smartsymbols) – converts characters into symbols, e.g. fractions, copyright mark, etc.  
-  - [Snippets](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#snippets) – add ability to embed content from arbitrary files into a document  
-  - [SuperFences](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#superfences) – facilitates creation of flowcharts, sequence diagrams, etc. including [Mermaid.js](https://mermaid-js.github.io/mermaid/) integration 
-  - [Tabbed](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#tabbed) - allows usage of content tabs to group related content
-  - [Table of Contents](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#table-of-contents) – automatically generates a table of contents
-  - [Tables](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#tables) – adds ability to create tables in Markdown  
-  - [Tasklist](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#tasklist) – allows usage of [GitHub Flavored Markdown](https://github.github.com/gfm/) inspired tasklists  
+ Some things to keep in mind when editing Markdown files for the wiki:
+
+
+### Python Markdown and Extensions
+
+MkDocs uses Python Markdown, a Python implementation of Markdown that supports extensions for additional features. The specific extensions enabled for the site are listed in the `mkdocs.yml` file under the `markdown_extensions` section. Some of these extensions include:
+
+- `admonition`: This extension adds support for admonitions, which are specially marked "blocks" of text that render as sidebars. They're useful for asides or special notes.
+
+- `codehilite`: This extension adds syntax highlighting to code blocks.
+
+- `toc`: This extension generates a table of contents.
+
+- `tables`: This extension adds support for tables.
+
+- `footnotes`: This extension adds support for footnotes.
+
+
+### YAML Validation Scheme in VSCode
+
+If you're editing files in Visual Studio Code (VSCode), it's recommended to add the YAML validation scheme for better linting and autocompletion. Here's how you can do it:
+
+1. Open VSCode and go to the Extensions view (`Ctrl+Shift+X`).
+2. Search for and install the "YAML" extension by Red Hat.
+3. After installation, open the settings (`Ctrl+,`).
+4. Search for "YAML Schemas" in the settings search bar.
+5. Click on "Edit in settings.json".
+6. In the settings.json file, add the following:
+
+```json
+"yaml.schemas": {
+    "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/schema.json": "mkdocs.yml"
+}
+```
+
+7. Save the settings.json file.
+
+This will enable the YAML validation scheme specifically for the `mkdocs.yml` file.
+
+
+### Differences from GitHub Flavored Markdown
+
+While Python Markdown is similar to GitHub Flavored Markdown (GFM), there are some differences to be aware of:
+
+- **Nested Lists**: In Python Markdown, nested lists require four spaces for indentation, while GFM only requires two spaces.
+- **URL Auto-linking**: GFM automatically converts URLs into links, while Python Markdown does not.
+
+For a more comprehensive comparison, you can refer to the [Python Markdown documentation](https://python-markdown.github.io/) and the [GitHub Flavored Markdown Spec](https://github.github.com/gfm/).
+
+Remember, when you're editing Markdown files for the documentation site, always preview your changes locally to ensure they render as expected.
+
+
+### Linking
+
+- **GitHub Flavored Markdown**: Supports wiki-style links, where you can link to other pages using the page's title in double brackets `[[Page Title]]`.
+- **MkDocs**: Uses relative linking, where links are relative to the `docs` directory. For example, to link to a file named `example.md` in a subdirectory called `subdir`, you would use `[Link Text](subdir/example.md)`.
+
+For more information on linking in MkDocs, refer to the [official documentation on linking](https://www.mkdocs.org/user-guide/writing-your-docs/#linking-to-pages).
+
+
+## Support
+
+If you need help or have questions, don't hesitate to reach out to the project maintainers or the Hack for LA community. You can also check the issues in the [hackforla/website](https://github.com/hackforla/website) repository for ongoing discussions and known issues.
