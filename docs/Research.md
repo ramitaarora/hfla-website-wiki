@@ -1,2 +1,0 @@
-- [UI UX Researcher Start page](UI-UX-Researcher-Start-page)
-- [Research Output Overview](Research-Output-Overview)

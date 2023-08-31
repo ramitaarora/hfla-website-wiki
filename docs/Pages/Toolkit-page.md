@@ -1,4 +1,0 @@
-# Toolkit
-
-  * Guides
-  * External Resources

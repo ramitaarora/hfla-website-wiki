@@ -1,1 +1,0 @@
-This page is not yet done. If you would like to write it, please check out [#2316](https://github.com/hackforla/website/issues/2316).
