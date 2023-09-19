@@ -30,13 +30,13 @@ Here are some additional resources to help you contribute effectively to the pro
 
     Learn the key terms and jargon used in the project
 
-- :material-message:{ .lg .middle } __[Communicating with the Team](communicating-with-the-team.md)__
+- :material-message:{ .lg .middle } __[Communicating with the Team](how-to-communicate-with-the-team.md)__
 
     ---
 
     Learn about our communication tools and etiquette
 
-- :material-web:{ .lg .middle } __[HfLA Website Overview](website-pages/index.md)__
+- :material-web:{ .lg .middle } __[HfLA Website Overview](pages/index.md)__
 
     ---
 
