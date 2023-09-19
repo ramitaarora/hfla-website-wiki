@@ -6,8 +6,6 @@ title: Home
 
 This wiki serves as a central resource for all team members working on the Hack for LA website.
 
-!!! tip "If you're having trouble finding what you're looking for, make sure to use the powerful search function provided by MkDocs Material. Simply type your query in the search bar at the top of the page, and you'll see relevant results from across the entire wiki."
-
 ## Project Essentials
 
 Here are some additional resources to help you contribute effectively to the project.
@@ -77,11 +75,11 @@ Explore documentation and resources specific to your role within the organizatio
 
 <div class="grid cards" markdown>
 
-- :material-laptop:{ .lg .middle } __[Development](dev/)__
-- :material-palette:{ .lg .middle } __[Design](design/)__
-- :material-magnify:{ .lg .middle } __[Research](research/)__
-- :material-chart-bar:{ .lg .middle } __[Data Science](data/)__
-- :material-notebook-multiple:{ .lg .middle } __[Content Writing](content/)__
-- :material-chart-timeline:{ .lg .middle } __[Product & Project Management](product/)__
+- :material-laptop:{ .lg .middle } __[Development](roles/dev/)__
+- :material-palette:{ .lg .middle } __[Design](roles/design/)__
+- :material-magnify:{ .lg .middle } __[Research](roles/research/)__
+- :material-chart-bar:{ .lg .middle } __[Data Science](roles/data/)__
+- :material-notebook-multiple:{ .lg .middle } __[Content Writing](roles/content/)__
+- :material-chart-timeline:{ .lg .middle } __[Product & Project Management](roles/product/)__
 
 </div>
