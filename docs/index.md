@@ -8,11 +8,9 @@ This wiki serves as a central resource for all team members working on the Hack 
 
 ## Project Essentials
 
-Here are some additional resources to help you contribute effectively to the project.
-
 <div class="grid cards" markdown>
 
-- :material-content-save-settings:{ .lg .middle } __[Contribute to Docs](contribute-to-docs.md)__
+- :material-content-save-settings:{ .lg .middle } __[Contribute to Docs](../README.md)__
 
     ---
 
@@ -62,7 +60,7 @@ For further learning, explore these additional resources.
 
     Learn how we use GitHub Actions for continuous integration
 
-- :material-school:{ .lg .middle } __[Guides & Tutorials](how-to/)__
+- :material-school:{ .lg .middle } __[Guides & Tutorials](pending-audit/how-to/)__
 
     ---
     Learn about our general practices and guidelines for using GitHub, including how we interpret labels, manage issues, pull requests, and version control.
