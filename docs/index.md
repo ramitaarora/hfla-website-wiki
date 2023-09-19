@@ -36,7 +36,7 @@ Here are some additional resources to help you contribute effectively to the pro
 
     Learn about our communication tools and etiquette
 
-- :material-web:{ .lg .middle } __[HfLA Website Overview](pages/index.md)__
+- :material-web:{ .lg .middle } __[HfLA Website Overview](pending-audit/pages/index.md)__
 
     ---
 
@@ -56,7 +56,7 @@ For further learning, explore these additional resources.
 
 <div class="grid cards" markdown>
 
-- :material-github:{ .lg .middle } __[GitHub Actions](dev/github-actions/index.md)__
+- :material-github:{ .lg .middle } __[GitHub Actions](roles/dev/github-actions/index.md)__
 
     ---
 
