@@ -25,11 +25,11 @@ theme:
     #- content.tabs.link
     - content.tooltips
     #- header.autohide
-    - navigation.expand
+    #- navigation.expand
     - navigation.footer
     - navigation.indexes
     #- navigation.instant
-    - navigation.sections
+    #- navigation.sections
     #- navigation.tabs
     #- navigation.tabs.sticky
     - navigation.top
