@@ -4,10 +4,10 @@ Below is an automated list of all dev-related decision records.
 
 ## Decision Record Workflow
 
-See detailed instructions and templates for [adding new records](../decision-records/add-new-record.md):
+See detailed instructions and templates for [adding new records](add-new-record.md):
 
-- Create DR for [adopted solution](../decision-records/add-new-record.md#adopted)
-- Create DR for [solution not implemented](../decision-records/add-new-record.md#not-implemented)
+- Create DR for [adopted solution](add-new-record.md#adopted)
+- Create DR for [solution not implemented](add-new-record.md#not-implemented)
 
 ## Records Index
 
