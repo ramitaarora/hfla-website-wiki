@@ -20,11 +20,14 @@ for filepath in glob.glob("docs/**/*.md", recursive=True):
             required_tags = {tag.strip().strip("'") for tag in required_tags}
 
             # Generate the heading with details and summary tags
+            # Use an absolute path for the href that always points to the root /tags/ directory
             tag_names_with_links = " ".join(
-                [f'<a href="../../tags/#{tag.replace(": ", "-").replace(" ", "-")}" class="md-tag">{tag}</a>' for tag in required_tags]  
-                )
-            heading = f'<!-- TAGS={match.group(1)} BEGIN -->\n<details class="md-tag-details"><summary class="md-tag-summary">Tags</summary>\n<p>{tag_names_with_links}</p></details>\n\n'  
-
+                [
+                    f'<a href="/tags/#{tag.replace(": ", "-").replace(" ", "-")}" class="md-tag">{tag}</a>'
+                    for tag in required_tags
+                ]
+            )
+            heading = f'<!-- TAGS={match.group(1)} BEGIN -->\n<details class="md-tag-details"><summary class="md-tag-summary">Tags</summary>\n<p>{tag_names_with_links}</p></details>\n\n'
 
             # List to store pages that meet the criteria
             matching_pages = []
@@ -43,7 +46,9 @@ for filepath in glob.glob("docs/**/*.md", recursive=True):
                         # Check if the tags meet the criteria
                         tags = set(front_matter.get("tags", []))
                         if required_tags.issubset(tags):
-                            matching_pages.append((other_filepath, front_matter.get("title")))
+                            matching_pages.append(
+                                (other_filepath, front_matter.get("title"))
+                            )
 
             # Generate the markdown content with the links
             generated_content = ""
@@ -75,11 +80,13 @@ for filepath in glob.glob("docs/**/*.md", recursive=True):
 
             # Find the index of the end comment
             end_comment_index = content.find("<!-- TAGS END -->", match.end())
-            if end_comment_index ==-1:
+            if end_comment_index == -1:
                 end_comment_index = len(content)
 
             # Append the content before the placeholder, the heading, and the generated content
-            new_content += content[last_position:match.start()] + heading + generated_content
+            new_content += (
+                content[last_position : match.start()] + heading + generated_content
+            )
             last_position = end_comment_index
 
         # Append the rest of the content
