@@ -40,9 +40,11 @@ theme:
     - toc.follow
     #- toc.integrate
 
+site_url: https://hackforla.github.io/website-wiki/
 repo_url: https://github.com/hackforla/website-wiki
 repo_name: hackforla/website-wiki
 edit_uri: edit/main/docs/
+
 
 extra_css:
   - assets/css/extra.css
