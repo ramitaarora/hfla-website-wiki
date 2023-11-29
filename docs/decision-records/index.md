@@ -16,7 +16,7 @@ Links to records are generated on page build according to the  details specified
 ### :green_square: Status: Adopted
 <!-- TAGS='adopted' BEGIN -->
 <details class="md-tag-details"><summary class="md-tag-summary">Tags</summary>
-<p><a href="/tags/#adopted" class="md-tag">adopted</a></p></details>
+<p><a href="/website-wiki/tags/#adopted" class="md-tag">adopted</a></p></details>
 
 - [Standardize HTML img tag](adopted/standardize-html-img-tag.md)
 - [Use merge commit for gh-pages updates](adopted/use-merge-commit-for-gh-pages-updates.md)
@@ -32,7 +32,7 @@ Links to records are generated on page build according to the  details specified
 ### :red_square: Status: Not-implemented
 <!-- TAGS='not implemented' BEGIN -->
 <details class="md-tag-details"><summary class="md-tag-summary">Tags</summary>
-<p><a href="/tags/#not-implemented" class="md-tag">not implemented</a></p></details>
+<p><a href="/website-wiki/tags/#not-implemented" class="md-tag">not implemented</a></p></details>
 
 - [Convert docs to markdown with existing add-on](not-implemented/convert-docs-to-markdown-with-existing-add-on.md)
 - [Maintain design system webpages](not-implemented/maintain-design-system-webpages.md)

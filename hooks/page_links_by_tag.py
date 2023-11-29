@@ -3,6 +3,9 @@ import yaml
 import glob
 import re
 
+# Base path for the tags directory
+base_path = "/website-wiki/"
+
 # Go through each markdown file
 for filepath in glob.glob("docs/**/*.md", recursive=True):
     with open(filepath, "r", encoding="utf-8") as file:
@@ -20,14 +23,15 @@ for filepath in glob.glob("docs/**/*.md", recursive=True):
             required_tags = {tag.strip().strip("'") for tag in required_tags}
 
             # Generate the heading with details and summary tags
-            # Use an absolute path for the href that always points to the root /tags/ directory
-            tag_names_with_links = " ".join(
-                [
-                    f'<a href="/tags/#{tag.replace(": ", "-").replace(" ", "-")}" class="md-tag">{tag}</a>'
-                    for tag in required_tags
-                ]
-            )
-            heading = f'<!-- TAGS={match.group(1)} BEGIN -->\n<details class="md-tag-details"><summary class="md-tag-summary">Tags</summary>\n<p>{tag_names_with_links}</p></details>\n\n'
+            tag_names_with_links = []
+            for tag in required_tags:
+                # Construct the tag URL
+                tag_url = f'{base_path}tags/#{tag.replace(": ", "-").replace(" ", "-")}'
+                tag_names_with_links.append(
+                    f'<a href="{tag_url}" class="md-tag">{tag}</a>'
+                )
+
+            heading = f'<!-- TAGS={match.group(1)} BEGIN -->\n<details class="md-tag-details"><summary class="md-tag-summary">Tags</summary>\n<p>{" ".join(tag_names_with_links)}</p></details>\n\n'
 
             # List to store pages that meet the criteria
             matching_pages = []
