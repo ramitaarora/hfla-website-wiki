@@ -3,6 +3,9 @@ import re
 import yaml
 import glob
 
+# Base path for the tags directory
+base_path = "/website-wiki/"
+
 # List to store page information
 page_info = []
 
@@ -38,8 +41,8 @@ for filepath in glob.glob("docs/**/*.md", recursive=True):
         relative_path = os.path.relpath(filepath, "docs")
         filename = os.path.basename(filepath)
         location = os.path.dirname(relative_path)
-        if location == '.':
-            location = 'docs/'
+        if location == ".":
+            location = "docs/"
         page_info.append((filename, location, title, tags))
 
 # Sort the pages alphabetically by title
@@ -48,8 +51,11 @@ page_info.sort()
 # Generate the markdown content with a single table
 table = "| Index | File Name | Location | H1 Title | Tags |\n| --- | --- | --- | --- | --- |\n"
 for index, (filename, location, title, tags) in enumerate(page_info, start=1):
-    tags_str = " ".join(
-        [f'<a href="../../tags/#{tag.replace(": ", "-").replace(" ", "-")}" class="md-tag" markdown="1">{tag}</a><br>' for tag in tags]
+    tags_str = ", ".join(
+        [
+            f'[#{tag.replace(": ", "-").replace(" ", "-")}]({base_path}tags/#{tag.replace(": ", "-").replace(" ", "-")})'
+            for tag in tags
+        ]
     )
     table += f"| {index} | [{filename}](./{location}/{filename}) | {location} | {title} | {tags_str} |\n"
 
@@ -66,6 +72,12 @@ end_index = content.find(placeholder_end)
 
 # Insert the content between the placeholders
 if start_index != -1 and end_index != -1:
-    new_content = content[:start_index + len(placeholder_start)] + "\n" + table + "\n" + content[end_index:]
+    new_content = (
+        content[: start_index + len(placeholder_start)]
+        + "\n"
+        + table
+        + "\n"
+        + content[end_index:]
+    )
     with open(designated_page, "w", encoding="utf-8") as file:
         file.write(new_content)
