@@ -10,7 +10,7 @@ This wiki serves as a central resource for all team members working on the Hack 
 
 <div class="grid cards" markdown>
 
-- :material-content-save-settings:{ .lg .middle } __[Contribute to Docs](../README.md)__
+- :material-content-save-settings:{ .lg .middle } __[Contribute to Docs](https://github.com/hackforla/website-wiki/blob/main/README.md)__
 
     ---
 
