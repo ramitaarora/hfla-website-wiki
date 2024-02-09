@@ -68,7 +68,7 @@ plugins:
       minify_html: true
   - search: {}
   - autolinks: {}
-  - git-revision-date-localized: {}
+  # - git-revision-date-localized: {}
 
 markdown_extensions:
   - abbr
@@ -80,7 +80,8 @@ markdown_extensions:
   - toc:
       title: On this page
       permalink: "#"
-  - pymdownx.betterem
+  - pymdownx.betterem:
+      smart_enable: all
   - pymdownx.caret
   - pymdownx.details
   - pymdownx.emoji:
@@ -90,8 +91,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.magiclink:
-      hide_protocol: false
-      normalize_issue_symbols: false
+      normalize_issue_symbols: true
       user: hackforla
       provider: github
       repo: website

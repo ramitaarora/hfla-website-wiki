@@ -1,8 +1,10 @@
 # HackforLA.org Wiki
 
-This repository houses the documentation for the Hack for LA website team. The live site is available at [https://hackforla.github.io/website-wiki/](https://hackforla.github.io/website-wiki/). The documentation is built using [MkDocs](https://www.mkdocs.org/) and is styled with the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme.
+This repository houses the documentation for Hack for LA's website team. The documentation is built using [MkDocs](https://www.mkdocs.org/) and is styled with the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme.
 
-**Note**: Issues related to this wiki are tracked in the [hackforla/website repository](https://github.com/hackforla/website). For more information on the current state of the wiki, please refer to the [How to Contribute to the Wiki](https://github.com/hackforla/website/wiki/How-to-Contribute-to-the-Wiki) page.
+**Note**: Issues related to this wiki are tracked in the [hackforla/website repository](https://github.com/hackforla/website). 
+
+For more information on the current state of the wiki, please refer to the [How to Contribute to the Wiki](https://github.com/hackforla/website/wiki/How-to-Contribute-to-the-Wiki) page.
 
 ---
 
@@ -10,10 +12,11 @@ This repository houses the documentation for the Hack for LA website team. The l
 
 ### Clone or Fork the Repository
 
-Clone your fork or the original repository locally:
-
 ```bash
 git clone https://github.com/YOUR_USERNAME/website-wiki.git
+```
+
+```bash
 cd website-wiki
 ```
 
@@ -21,46 +24,75 @@ cd website-wiki
 
 ### With Docker
 
-1. **Pull the Docker Image**: To ensure you have the latest Docker image, run:
+The easiest way to get your local mkdocs server running and see your changes in real-time is by using Docker Compose.
+
+1. **Start the mkdocs Server**
+
+    To serve your site locally, run:
 
     ```bash
-    docker pull vraer/hfla-website-wiki:latest
+    docker-compose up
     ```
-  
-2. **Start the Development Server**: To start the development server, run:
+
+    This launches the mkdocs server, which serves your documentation site and listens for changes. Your site will automatically update as you make changes to the documentation.
+
+    If you prefer to run the server in the background, use:
 
     ```bash
-    docker run --rm -it -p 8000:8000 -v ${PWD}:/docs vraer/hfla-website-wiki:latest
+    docker-compose up -d
     ```
 
-Your site will now be accessible at <http://localhost:8000>.
+2. **View Your Site**
 
-#### Building the Documentation
+    Open a web browser and go to `http://localhost:8000` to see your mkdocs site live.
 
-To build the documentation into a `site` folder, run:
+3. **Stop the Server**
 
-```bash
-docker run --rm -it -v ${PWD}:/docs vraer/hfla-website-wiki:latest build
-```
+    To stop the server, if running in the foreground, press `Ctrl+C` in your terminal. For detached mode, use:
+
+    ```bash
+    docker-compose down
+    ```
+
 
 ### With Python virtualenv
 
+**Note for Windows Users Installing Python:**
+
+During the Python installation process, make sure to select the option **"Add Python 3.x to PATH"**. This step will allow you to run Python and pip commands from the Command Prompt.
+
 1. **Create a Virtual Environment**:
 
-    ```python
+    For macOS/Linux:
+
+    ```bash
     python3 -m venv venv
     ```
 
+    For Windows:
+
+    ```cmd
+    python -m venv venv
+    ```
+
 2. **Activate the Virtual Environment**:
+
+    For macOS/Linux:
 
     ```bash
     source venv/bin/activate
     ```
 
+    For Windows:
+
+    ```cmd
+    .\venv\Scripts\activate
+    ```
+
 3. **Install Required Packages**:
 
     ```bash
-    pip install -r requirements.txt 
+    pip install -r requirements.txt
     ```
 
 4. **Start the Development Server**:
@@ -69,11 +101,14 @@ docker run --rm -it -v ${PWD}:/docs vraer/hfla-website-wiki:latest build
     mkdocs serve
     ```
 
+    Your site will now be accessible at <http://localhost:8000>.
+
 5. **Build the Documentation**:
+
+    Building the mkdocs site generates static HTML files. This step is typically reserved for testing custom hooks or preparing the documentation for deployment.
 
     ```bash
     mkdocs build
     ```
 
-Your site will now be accessible at <http://localhost:8000>.
-
+    This compiles your Markdown files into static HTML files, placing them in the `site` directory.
