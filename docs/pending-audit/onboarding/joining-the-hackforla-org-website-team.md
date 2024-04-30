@@ -18,8 +18,8 @@ If you have not read the [Guide for New Volunteers](https://github.com/hackforla
 6. Slack your lead (engineering/developer, Research, Design, Content) a link to the [Team Roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit?usp=sharing). To ensure you get added to our Github.                                                     
 7. Read [Introduction to the Project](Introduction-to-the-Project).  
 8. Review [How Hack for LA uses Kanban](https://docs.google.com/document/d/11Fe7mNdmPBP5bD_yLJ1C0_I1TmoK47AuHHrdhdDyWCs/edit).
-9. Add any questions as comments to the guide to improve onboarding experiences. 
-
+9. Add any questions as comments to the guide to improve onboarding experiences.
+10. Have fun!
 
 ### Other useful links
 
